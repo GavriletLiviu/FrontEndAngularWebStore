@@ -1,0 +1,43 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Logitech">
+                    <label for="Logitech">Logitech</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Thermaltake">
+                    <label for="Thermaltake">Thermaltake</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let keyboard of keyboards">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{keyboard.id}}.jpg" class="product-img img">
+                <div class="product-icons">
+                        <a class="product-icon"  (click)="accessItem(keyboard.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(keyboard)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{keyboard.manufacturer}} {{keyboard.title}}</p>
+            <h4 class="product-price">RON {{keyboard.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

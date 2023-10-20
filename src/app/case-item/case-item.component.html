@@ -1,0 +1,19 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sCase.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+                <h2 class="single-product-title">{{sCase.manufacturer}} - {{sCase.title}}</h2>
+                <p class="single-product-price text-slanted">RON {{sCase.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sCase.manufacturer}}</p>
+                <p class="single-product-desc">Maximum number of fans: {{sCase.fans}}</p>
+                <p class="single-product-desc">Included Fans: {{sCase.includedFans}}</p>
+                <p class="single-product-desc">Type of Case: {{sCase.type}}</p>
+                <p class="single-product-desc">Available front inputs: {{sCase.frontInputs}}</p>
+                <p class="single-product-desc">Dimensions: {{sCase.dimensions}}</p>
+                <p class="single-product-desc">Motherboard Format: {{sCase.motherboardFormat}}</p>
+                <p class="single-product-desc">Colors: {{sCase.color}}</p>
+                <p class="single-product-desc">Weight: {{sCase.weight}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sCase)">add to chart</button>
+        </article>
+    </div>
+</section>

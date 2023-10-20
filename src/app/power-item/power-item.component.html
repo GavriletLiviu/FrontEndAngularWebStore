@@ -1,0 +1,22 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sPower.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <div>
+                <h2 class="single-product-title">{{sPower.manufacturer}} - {{sPower.title}}</h2>
+                <p class="single-product-price text-slanted">RON {{sPower.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sPower.manufacturer}}</p>
+                <p class="single-product-desc">Maximum Output Power: {{sPower.maxPower}}</p>
+                <p class="single-product-desc">Number of SATA Connectors: {{sPower.connectorSata}}</p>
+                <p class="single-product-desc">Number of Peripherial Connectors: {{sPower.connectorPeripherial}}</p>
+                <p class="single-product-desc">Motherboard Connector: {{sPower.connectorMotherboard}}</p>
+                <p class="single-product-desc">Number of CPU Connectors: {{sPower.connectorCpu}}</p>
+                <p class="single-product-desc">Number of PCIe 6pin Connectors: {{sPower.connectorPcie6}}</p>
+                <p class="single-product-desc">Number of PCIe 8pin Connectors: {{sPower.connectorPcie8}}</p>
+                <p class="single-product-desc">Format Size: {{sPower.format}}</p>
+                <p class="single-product-desc">Modularity Topology: {{sPower.modularity}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sPower)">add to chart</button>
+            </div>
+        </article>
+    </div>
+</section>

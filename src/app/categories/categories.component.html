@@ -1,0 +1,14 @@
+<div class="categories-parent">
+    <h2 class="category-title">Categories</h2>
+    <div class="categories-container">
+        <a
+        *ngFor="let category of categories"
+        class="category"
+        (click)="onSelect(category)"
+        appCategoriesDirective
+        routerLink="/{{category.name}}"
+        routerLinkActive="active">
+            <img class="category-img" src="{{category.url}}" alt="">
+        </a>   
+    </div>
+</div>

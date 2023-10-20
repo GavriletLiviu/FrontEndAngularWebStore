@@ -1,0 +1,20 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sMonitor.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <div>
+                <h2 class="single-product-title">{{sMonitor.manufacturer}} - {{sMonitor.title}}</h2>
+                <p class="single-product-price text-slanted">RON {{sMonitor.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sMonitor.manufacturer}}</p>
+                <p class="single-product-desc">Size: {{sMonitor.size}}</p>
+                <p class="single-product-desc">Resolution: {{sMonitor.resolution}}</p>
+                <p class="single-product-desc">Refresh Rate: {{sMonitor.refresh}}</p>
+                <p class="single-product-desc">Response Time: {{sMonitor.response}}</p>
+                <p class="single-product-desc">Ports: {{sMonitor.ports}}</p>
+                <p class="single-product-desc">Format: {{sMonitor.format}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sMonitor)">add to chart</button>
+            </div>
+        </article>
+    </div>
+</section>
+

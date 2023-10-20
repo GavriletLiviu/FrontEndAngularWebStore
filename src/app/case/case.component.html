@@ -1,0 +1,56 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Lian Li" (change)="filter($event, 'manufacturer', 'Lian Li')">
+                    <label for="Lian Li">Lian Li</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Corsair" (change)="filter($event, 'manufacturer', 'Corsair')">
+                    <label for="Lian Li">Corsair</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Included Fans</h4>
+            <article class="includedfans">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="0" (change)="filter($event, 'includedFans', '0')">
+                    <label for="0">0</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="3" (change)="filter($event, 'includedFans', '3')">
+                    <label for="3">3</label>
+                </div>
+            </article>
+            <button class=company-btn (click)="resetFilters()">Reset Filters</button>
+            <!-- price -->
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let computerCase of cases">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{computerCase.id}}.jpg" class="product-img img" alt="{{computerCase.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(computerCase.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon">
+                    <i class="fas fa-shopping-cart" (click)="addItem(computerCase)"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{computerCase.manufacturer}} {{computerCase.title}}</p>
+            <h4 class="product-price">RON {{computerCase.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

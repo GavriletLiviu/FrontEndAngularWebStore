@@ -1,0 +1,86 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Asus" (change)="filter($event, 'manufacturer', 'Asus')">
+                    <label for="Asus">Asus</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Gigabyte" (change)="filter($event, 'manufacturer', 'Gigabyte')">
+                    <label for="Gigabyte">Gigabyte</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Gpu Processor</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="nVidia GeForce RTX 4090" class="company-btn" (change)="filter($event, 'processor', 'nVidia GeForce RTX 4090')">
+                    <label for="nVidia GeForce RTX 4090">nVidia GeForce RTX 4090</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="nVidia GeForce RTX 4070" class="company-btn" (change)="filter($event, 'processor', 'nVidia GeForce RTX 4070')">
+                    <label for="nVidia GeForce RTX 4070">nVidia GeForce RTX 4070</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="Navi 31 XTX" class="company-btn" (change)="filter($event, 'processor', 'Navi 31 XTX')">
+                    <label for="Navi 31 XTX">Navi 31 XTX</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="Navi 31 XT" class="company-btn" (change)="filter($event, 'processor', 'Navi 31 XT')">
+                    <label for="Navi 31 XT">Navi 31 XT</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="Navi 23" class="company-btn" (change)="filter($event, 'processor', 'Navi 23')">
+                    <label for="Navi 23">Navi 23</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Memory Size</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="8GB" class="company-btn" (change)="filter($event, 'memorySize', '8GB')">
+                    <label for="8GB">8GB</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="12GB" class="company-btn" (change)="filter($event, 'memorySize', '12GB')">
+                    <label for="12GB">12GB</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="20GB" class="company-btn" (change)="filter($event, 'memorySize', '20GB')">
+                    <label for="20GB">20GB</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="24GB" class="company-btn" (change)="filter($event, 'memorySize', '24GB')">
+                    <label for="24GB">24GB</label>
+                </div>
+            </article>
+            <button class=company-btn (click)="resetFilters()">Reset Filters</button>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let gpu of gpus">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{gpu.id}}.jpg" class="product-img img" alt="{{gpu.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(gpu.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(gpu)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{gpu.manufacturer}} {{gpu.title}}</p>
+            <h4 class="product-price">RON {{gpu.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

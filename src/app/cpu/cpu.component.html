@@ -1,0 +1,90 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="Intel" class="company-btn" (change)="filter($event, 'manufacturer', 'Intel')">
+                    <label for="Intel">Intel</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="AMD" class="company-btn" (change)="filter($event, 'manufacturer', 'Amd')">
+                    <label for="Intel">AMD</label>
+                </div>
+            </article>
+            <h4 class="filter-title">Socket</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="socket" class="company-btn" (change)="filter($event, 'socket', 'am4')">
+                    <label for="socket">AM4</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="socket" class="company-btn" (change)="filter($event, 'socket', 'am5')">
+                    <label for="socket">AM5</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="socket" class="company-btn" (change)="filter($event, 'socket', '1700')">
+                    <label for="socket">1700</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Cores</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="4" class="company-btn" (change)="filter($event, 'cores', '4')">
+                    <label for="4">4</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="8" class="company-btn" (change)="filter($event, 'cores', '8')">
+                    <label for="8">8</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="10" class="company-btn" (change)="filter($event, 'cores', '10')">
+                    <label for="10">10</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="12" class="company-btn" (change)="filter($event, 'cores', '12')">
+                    <label for="12">12</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="14" class="company-btn" (change)="filter($event, 'cores', '14')">
+                    <label for="14">14</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="16" class="company-btn" (change)="filter($event, 'cores', '16')">
+                    <label for="16">16</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="24" class="company-btn" (change)="filter($event, 'cores', '24')">
+                    <label for="24">24</label>
+                </div>
+            </article>
+            <button class=company-btn (click)="resetFilters()">Reset Filters</button>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let cpu of cpus">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{cpu.id}}.jpg" class="product-img img" alt="ryzen9 7950x">
+                <div class="product-icons" >
+                        <a class="product-icon" (click)="accessItem(cpu.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(cpu)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{cpu.manufacturer}} {{cpu.family}} {{cpu.title}}</p>
+            <h4 class="product-price">RON {{cpu.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

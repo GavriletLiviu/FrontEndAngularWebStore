@@ -1,0 +1,18 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sHeadphone.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <div>
+                <h2 class="single-product-title">{{sHeadphone.manufacturer}} - {{sHeadphone.title}}</h2>
+                <p class="single-product-price text-slanted">RON {{sHeadphone.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sHeadphone.manufacturer}}</p>
+                <p class="single-product-desc">Connectivity: {{sHeadphone.connectivity}}</p>
+                <p class="single-product-desc">Impedance: {{sHeadphone.impedance}}</p>
+                <p class="single-product-desc">Microphone: {{sHeadphone.microphone}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sHeadphone)">add to chart</button>
+            </div>
+        </article>
+    </div>
+</section>
+
+connectivity:string, impedance:string, microphone:string,

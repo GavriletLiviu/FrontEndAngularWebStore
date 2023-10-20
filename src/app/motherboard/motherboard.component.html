@@ -1,0 +1,58 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Lian Li">
+                    <label for="Lian Li">Lian Li</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Lian Li">
+                    <label for="Lian Li">Lian Li</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Cpu Socket</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="AM4">
+                    <label for="AM4">AM4</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="AM5">
+                    <label for="AM5">AM5</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="1200">
+                    <label for="1200">1200</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let motherboard of motherboards">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{motherboard.id}}.jpg" class="product-img img" alt="{{motherboard.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(motherboard.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(motherboard)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{motherboard.manufacturer}} {{motherboard.title}}</p>
+            <h4 class="product-price">RON {{motherboard.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

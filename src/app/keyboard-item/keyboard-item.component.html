@@ -1,0 +1,18 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sKeyboard.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <div>
+                <h2 class="single-product-title">{{sKeyboard.manufacturer}} - {{sKeyboard.title}}</h2>
+                <p class="single-product-price text-slanted">RON {{sKeyboard.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sKeyboard.manufacturer}}</p>
+                <p class="single-product-desc">Connectivity: {{sKeyboard.connect}}</p>
+                <p class="single-product-desc">Key Lights: {{sKeyboard.lights}}</p>
+                <p class="single-product-desc">Weight: {{sKeyboard.weight}}</p>
+                <p class="single-product-desc">Type: {{sKeyboard.type}}</p>
+                <p class="single-product-desc">Dimensions: {{sKeyboard.dimensions}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sKeyboard)">add to chart</button>
+            </div>
+        </article>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sGpu.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <h2 class="single-product-title">{{sGpu.manufacturer}} - {{sGpu.title}}</h2>
+            <p class="single-product-price text-slanted">RON {{sGpu.price}}</p>
+            <p class="single-product-desc">Manufacturer: {{sGpu.manufacturer}}</p>
+            <p class="single-product-desc">Pci-Express Slot: {{sGpu.slot}}</p>
+            <p class="single-product-desc">Processor: {{sGpu.processor}}</p>
+            <p class="single-product-desc">Cores: {{sGpu.cores}}</p>
+            <p class="single-product-desc">Technologies: {{sGpu.technologies}}</p>
+            <p class="single-product-desc">Series: {{sGpu.series}}</p>
+            <p class="single-product-desc">Processor Frequency: {{sGpu.processorFrequency}}</p>
+            <p class="single-product-desc">Memory Size: {{sGpu.memorySize}}</p>
+        </article>
+        <article class="single-product-info">
+            <p class="single-product-desc">Memory Type: {{sGpu.memoryType}}</p>
+            <p class="single-product-desc">Memory Bus Size: {{sGpu.memoryBusSize}}</p>
+            <p class="single-product-desc">DirectX version: {{sGpu.directX}}</p>
+            <p class="single-product-desc">OpenGL version: {{sGpu.openGL}}</p>
+            <p class="single-product-desc">Display Port: {{sGpu.displayPorts}}</p>
+            <p class="single-product-desc">Hdmi Port: {{sGpu.hdmiPorts}}</p>
+            <p class="single-product-desc">VGA Port: {{sGpu.vgaPorts}}</p>
+            <p class="single-product-desc">DVI Port: {{sGpu.dviPorts}}</p>
+            <p class="single-product-desc">Power Port: {{sGpu.powerPorts}}</p>
+            <p class="single-product-desc">Power: {{sGpu.power}}</p>
+            <button class="addToCartBtn btn" (click)="addItem(sGpu)">add to chart</button>
+        </article>
+    </div>
+</section>
+
+

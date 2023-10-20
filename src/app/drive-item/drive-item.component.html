@@ -1,0 +1,17 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sDrive.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <div>
+                <h2 class="single-product-title">{{sDrive.manufacturer}} - {{sDrive.title}}</h2>
+                <p class="single-product-price text-slanted">RON {{sDrive.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sDrive.manufacturer}}</p>
+                <p class="single-product-desc">Capacity: {{sDrive.capacity}}</p>
+                <p class="single-product-desc">Buffer: {{sDrive.buffer}}</p>
+                <p class="single-product-desc">Conector: {{sDrive.conector}}</p>
+                <p class="single-product-desc">Format: {{sDrive.format}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sDrive)">add to chart</button>
+            </div>
+        </article>
+    </div>
+</section>

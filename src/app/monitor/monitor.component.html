@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="LG" class="company-btn">
+                    <label for="LG">LG</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="Samsung" class="company-btn">
+                    <label for="Samsung">Samsung</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Size</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="86 inch" class="company-btn">
+                    <label for="86 inch">86 inch</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="85 inch" class="company-btn">
+                    <label for="85 inch">85 inch</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let monitor of monitors">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{monitor.id}}.jpg" class="product-img img" alt="ryzen9 7950x">
+                <div class="product-icons" >
+                        <a class="product-icon" (click)="accessItem(monitor.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(monitor)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{monitor.manufacturer}} {{monitor.title}}</p>
+            <h4 class="product-price">RON {{monitor.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

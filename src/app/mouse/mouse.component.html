@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Razer">
+                    <label for="Razer">Razer</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Logitech">
+                    <label for="Logitech">Logitech</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Resolution</h4>
+            <article class="includedfans">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="30000dpi">
+                    <label for="30000dpi">30000dpi</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="1600dpi">
+                    <label for="1600dpi">1600dpi</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let mouse of mice">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{mouse.id}}.jpg" class="product-img img" alt="{{mouse.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(mouse.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(mouse)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{mouse.manufacturer}} {{mouse.title}}</p>
+            <h4 class="product-price">RON {{mouse.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

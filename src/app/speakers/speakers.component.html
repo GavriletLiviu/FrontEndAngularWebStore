@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="Edifier" class="company-btn">
+                    <label for="Edifier">Edifier</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="Creative" class="company-btn">
+                    <label for="Creative">Creative</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Format</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="2.0" class="company-btn">
+                    <label for="2.0">2.0</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="2.1" class="company-btn">
+                    <label for="2.1">2.1</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let speaker of speakers">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{speaker.id}}.jpg" class="product-img img" alt="ryzen9 7950x">
+                <div class="product-icons" >
+                        <a class="product-icon" (click)="accessItem(speaker.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(speaker)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{speaker.manufacturer}} {{speaker.title}}</p>
+            <h4 class="product-price">RON {{speaker.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

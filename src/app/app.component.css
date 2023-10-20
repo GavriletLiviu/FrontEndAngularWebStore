@@ -1,0 +1,165 @@
+/* Variables */
+
+:root {
+    --clr-primary-0:#f0f7f9;
+    --clr-primary-1:#c5e0e5;
+    --clr-primary-3:#99c8d2;
+    --clr-primary-5:#6db1bf;
+    --clr-primary-7:#4c7c86;
+    --clr-primary-10:#2c474c;	
+    --clr-secondary-0:#eae8ed;
+    --clr-secondary-1:#aca3b7;
+    --clr-secondary-3:#6e5f81;
+    --clr-secondary-5:#301a4b;
+    --clr-secondary-7:#221235;
+    --clr-secondary-10:#130a1e;
+    --clr-tertiary-0:#fbf0e6;
+    --clr-tertiary-1:#f0c49b;
+    --clr-tertiary-3:#e49851;
+    --clr-tertiary-5:#d96c06;
+    --clr-tertiary-7:#984c04;
+    --clr-tertiary-10:#572b02;
+    --clr-success-0:#f2fdf5;
+    --clr-success-1:#cbf7d7;
+    --clr-success-3:#a3f0ba;
+    --clr-success-5:#7cea9c;
+    --clr-success-7:#57a46d;
+    --clr-success-10:#325e3e;
+    --clr-fail-0:#fbe9eb;
+    --clr-fail-1:#efa8af;
+    --clr-fail-3:#e36774;
+    --clr-fail-5:#d72638;
+    --clr-fail-7:#971b27;
+    --clr-fail-10:#560f16;
+    --clr-white: #fff;
+    --clr-black: #222;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+/* global styles */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #f0f7f9;
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+.img {
+  width: 100%;
+  display: block;
+}
+.text-slanted {
+  font-family: 'Kaushan Script', cursive;
+}
+.section-center {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.section {
+  padding: 5rem 0;
+}
+.btn {
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 0.375rem 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  transition: var(--transition);
+  border-color: transparent;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--clr-primary-7);
+  color: var(--clr-black);
+}
+.section-loading {
+  text-align: center;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-grey-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

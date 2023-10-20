@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Lian Li">
+                    <label for="Lian Li">Lian Li</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Lian Li">
+                    <label for="Lian Li">Lian Li</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Capacity</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" name="20TB" id="">
+                    <label for="20TB">20TB</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" name="1TB" id="">
+                    <label for="1TB">1TB</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let drive of drives">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{drive.id}}.jpg" class="product-img img" alt="{{drive.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(drive.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(drive)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{drive.manufacturer}} {{drive.title}}</p>
+            <h4 class="product-price">RON {{drive.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

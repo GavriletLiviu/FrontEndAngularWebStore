@@ -1,0 +1,103 @@
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+/>
+<nav class="navbar">
+    <div class="nav-center">
+        <div>
+            <ul class="nav-links" *ngIf="loggedIn === false">
+                <li>
+                    <a href="#" class="nav-link text-slanted" (click)="showLoginOverlay()">Log In</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-slanted" (click)="showRegisterOverlay()">Register</a>
+                </li>
+            </ul>
+            <ul class="logged-links" *ngIf="loggedIn === true">
+                <li>
+                    <strong class="text-slanted">Welcome!</strong>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-slanted" (click)="logoutProcedure()">Log Out</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img class="nav-logo" src="../../assets/logo/logo-dark-text (2).png" alt="logo image">
+        </div>
+        <div class="toggle-container">
+            <button class="toggle-cart" (click)="showCartOverlay()">
+                <!-- <img src="../../assets/shopping-cart.jpg" alt=""> -->
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <span class="cart-item-count">{{cartItemsAmount}}</span>
+        </div>
+    </div>
+</nav>
+<div class="cart-overlay">
+    <aside class="cart">
+        <button class="cart-close" (click)="closeCartOverlay()">
+            <i class="fas fa-times"></i>
+        </button>
+        <header>
+            <h3 class="text-slanted">Your Cart</h3>
+        </header>
+        <div class="cart-items">
+            <article class="cart-item"
+            *ngFor="let cartItem of cartItems">
+                <img src="http://localhost:5190/{{cartItem.id}}.jpg" alt="{{cartItem.title}}" class="cart-item-img">
+                <div>
+                    <h4 class="cart-item-name">{{cartItem.title}}</h4>
+                    <p class="cart-item-price">{{cartItem.price}}</p>
+                </div>
+                <div>
+                    <button class="cart-item-increase-btn" (click)="increase(cartItem)">
+                        <i class="fas fa-chevron-up"></i>
+                    </button>
+                    <p class="cart-item-amount" data-id="{{cartItem.id}}">{{cartItem.quantity}}</p>
+                    <button class="cart-item-decrease-btn" (click)="decrease(cartItem)">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </article>
+        </div>
+        <footer>
+            <h3 class="cart-total text-slanted">
+                total : {{cartAmount}}
+            </h3>
+            <button class="cart-checkout btn">
+                checkout
+            </button>
+        </footer>
+    </aside>
+</div>
+<div class="login-overlay">
+    <form class="login-form" (ngSubmit)="onLogin()" #login="ngForm">
+        <div class="login-container">
+            <h3>Login</h3><br>
+            <p class="alert"></p>
+            <input type="text" name="username" class="login-username" placeholder="input username" ngModel name="username"><br>
+            <input type="password" name="password" class="login-password" placeholder="input password" ngModel name="password"><br>
+            <button type="submit" class="btn btn-primary btn-login">LogIn</button>
+            <button type="button" class="btn close-btn" (click)="closeLoginOverlay()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="register-overlay">
+    <form class="register-form" (ngSubmit)="onRegister()" #register="ngForm">
+        <div class="register-container">
+            <h3>Register</h3>
+            <input type="text" name="username" class="register-username" placeholder="input desired username" ngModel name="rusername" required><br>
+            <input type="email" name="email" class="register-email" placeholder="input your email" ngModel name="remail" required email #remail="ngModel"><br>
+            <input type="password" name="password" class="register-pasword" placeholder="input desired password" ngModel name="rpassword1" required><br>
+            <input type="password" name="password2" class="register-pasword" placeholder="retype desired password" ngModel name="rpassword2" required><br>
+            <button type="submit" class="btn btn-primary btn-register" [disabled]="!register.valid">Register</button>
+            <button type="button" class="btn close-btn" (click)="closeRegisterOverlay()">
+                <i class="fas fa-times"></i>
+            </button><br>
+            <span *ngIf="!remail.valid && remail.touched">Please enter a valid email address!</span>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,20 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sSpeaker.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <div>
+                <h2 class="single-product-title">{{sSpeaker.manufacturer}} - {{sSpeaker.title}}</h2>
+                <p class="single-product-price text-slanted">RON {{sSpeaker.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sSpeaker.manufacturer}}</p>
+                <p class="single-product-desc">Speakers configuration: {{sSpeaker.type}}</p>
+                <p class="single-product-desc">Speaker Topology: {{sSpeaker.topology}}</p>
+                <p class="single-product-desc">Amplification: {{sSpeaker.amplification}}</p>
+                <p class="single-product-desc">Speaker Drivers: {{sSpeaker.drivers}}</p>
+                <p class="single-product-desc">Power: {{sSpeaker.power}}</p>
+                <p class="single-product-desc">Connectivity: {{sSpeaker.connectivity}}</p>
+                <p class="single-product-desc">weight: {{sSpeaker.weight}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sSpeaker)">add to chart</button>
+            </div>
+        </article>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sMotherboard.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <h2 class="single-product-title">{{sMotherboard.manufacturer}} - {{sMotherboard.title}}</h2>
+            <p class="single-product-price text-slanted">RON {{sMotherboard.price}}</p>
+            <p class="single-product-desc">Manufacturer: {{sMotherboard.manufacturer}}</p>
+            <p class="single-product-desc">CPU-Socket: {{sMotherboard.cpuSocket}}</p>
+            <p class="single-product-desc">Chipset: {{sMotherboard.chipset}}</p>
+            <p class="single-product-desc">Supported Cpu's: {{sMotherboard.supportedCpu}}</p>
+            <p class="single-product-desc">Supported RAM Type: {{sMotherboard.memoryType}}</p>
+            <p class="single-product-desc">Maximum RAM Capacity: {{sMotherboard.memoryCapacity}}</p>
+            <p class="single-product-desc">Number of RAM Slots: {{sMotherboard.memorySlots}}</p>
+            <p class="single-product-desc">PCIe Version: {{sMotherboard.pcieVersion}}</p>
+            <p class="single-product-desc">Audio Codec: {{sMotherboard.audioCodec}}</p>
+        </article>
+        <article class="single-product-info">
+            <p class="single-product-desc">LAN chipset: {{sMotherboard.lan}}</p>
+            <p class="single-product-desc">Ports: {{sMotherboard.connectivity}}</p>
+            <p class="single-product-desc">Supported RAID: {{sMotherboard.raidVersions}}</p>
+            <p class="single-product-desc">Sata Ports: {{sMotherboard.sataInterfaces}}</p>
+            <p class="single-product-desc">PCIe x16: {{sMotherboard.pciefullslots}}</p>
+            <p class="single-product-desc">PCIe x1/x4: {{sMotherboard.pcieslots}}</p>
+            <p class="single-product-desc">M.2 Slots: {{sMotherboard.m2slots}}</p>
+            <p class="single-product-desc">Technologies: {{sMotherboard.technologies}}</p>
+            <p class="single-product-desc">Dimensions: {{sMotherboard.dimensions}}</p>
+            <button class="addToCartBtn btn" (click)="addItem(sMotherboard)">add to chart</button>
+        </article>
+    </div>
+</section>

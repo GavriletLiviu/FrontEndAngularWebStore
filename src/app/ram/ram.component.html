@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="GSkill">
+                    <label for="GSkill">GSkill</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Corsair">
+                    <label for="Corsair">Corsair</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Frequency</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="5600Mhz">
+                    <label for="5600Mhz">5600Mhz</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="3600Mhz">
+                    <label for="3600Mhz">3600Mhz</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let ram of rams">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{ram.id}}.jpg" class="product-img img" alt="{{ram.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(ram.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(ram)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{ram.manufacturer}} {{ram.title}}</p>
+            <h4 class="product-price">RON {{ram.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

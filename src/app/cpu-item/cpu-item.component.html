@@ -1,0 +1,21 @@
+<section class="single-product">
+    <div class="section-center single-product-center">
+        <img src="http://localhost:5190/{{sCpu.id}}.jpg" alt="" class="single-product-img img">
+        <article class="single-product-info">
+            <div>
+                <h2 class="single-product-title">{{sCpu.manufacturer}} - {{sCpu.title}}</h2>
+                <p class="single-product-company text-slanted">{{sCpu.family}}</p>
+                <p class="single-product-price text-slanted">RON {{sCpu.price}}</p>
+                <p class="single-product-desc">Manufacturer: {{sCpu.manufacturer}}</p>
+                <p class="single-product-desc">Socket: {{sCpu.socket}}</p>
+                <p class="single-product-desc">Base Frequency: {{sCpu.baseFrequency}}</p>
+                <p class="single-product-desc">Boost Frequency: {{sCpu.boostFrequency}}</p>
+                <p class="single-product-desc">Cores: {{sCpu.cores}}</p>
+                <p class="single-product-desc">Level 1 Cache: {{sCpu.cacheL1}}</p>
+                <p class="single-product-desc">Level 3 Cache: {{sCpu.cacheL3}}</p>
+                <p class="single-product-desc">TDP: {{sCpu.tdp}}</p>
+                <button class="addToCartBtn btn" (click)="addItem(sCpu)">add to chart</button>
+            </div>
+        </article>
+    </div>
+</section>

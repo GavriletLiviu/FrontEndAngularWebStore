@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Noctua">
+                    <label for="Noctua">Noctua</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Be Quiet">
+                    <label for="Be Quiet">Be Quiet</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Socket</h4>
+            <article class="includedfans">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="AM4">
+                    <label for="AM4">AM4</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="1200">
+                    <label for="1200">1200</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let cpufan of cpufans">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{cpufan.id}}.jpg" class="product-img img" alt="{{cpufan.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(cpufan.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(cpufan)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{cpufan.manufacturer}} {{cpufan.title}}</p>
+            <h4 class="product-price">RON {{cpufan.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

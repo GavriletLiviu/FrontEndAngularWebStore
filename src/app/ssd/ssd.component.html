@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Samsung">
+                    <label for="Samsung">Samsung</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Seagate">
+                    <label for="Seagate">Seagate</label>
+                </div>
+            </article>
+            <h4 class="filter-title">Capacity</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="1.92TB">
+                    <label for="1.92TB">1.92TB</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="7.68TB">
+                    <label for="7.68TB">7.68TB</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let ssd of ssds">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{ssd.id}}.jpg" class="product-img img" alt="{{ssd.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(ssd.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(ssd)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{ssd.manufacturer}} {{ssd.title}}</p>
+            <h4 class="product-price">RON {{ssd.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>

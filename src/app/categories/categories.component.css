@@ -1,0 +1,40 @@
+.category-title{
+    font-size:1.5rem;
+    margin: 0;
+    text-align:center;
+    font-family: 'Kaushan Script', cursive;
+    color: #6db1bf;;
+}
+.categories-container {
+    width: 100vw;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.1rem; 
+    /* align-content: center; */
+    justify-content:center;
+}
+@media screen and (min-width:1080px){
+    .categories-container{
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+.category{
+    justify-self: center;
+    align-self:center;
+}
+.category-img{
+    border-radius: 50%;
+    transition: all 0.5s linear;
+}
+.category-img:hover{
+    transform:scale(1.25);
+}
+.categories-parent{
+    background: #f0f7f9;
+}
+
+.active{
+    background-color: #99c8d2;
+    border-radius: 25%;
+}

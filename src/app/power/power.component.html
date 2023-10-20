@@ -1,0 +1,54 @@
+<section class="products">
+    <!-- filters -->
+    <div class="filters">
+        <div class="filters-container">
+            <p>Only one filter per category!</p>
+            <!-- categories -->
+            <h4 class="filter-title">Manufacturer</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Seasonic">
+                    <label for="Seasonic">Seasonic</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="Asus">
+                    <label for="Asus">Asus</label>
+                </div>
+            </article>
+            <h4  class="filter-title">Maximum Power</h4>
+            <article class="filter">
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="1300W">
+                    <label for="1300W">1300W</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" class="company-btn" name="1600W">
+                    <label for="1600W">1600W</label>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="products-container">
+        <!-- new product -->
+        <article class="product"
+        *ngFor="let power of powers">
+            <div class="product-container">
+                <img src="http://localhost:5190/{{power.id}}.jpg" class="product-img img" alt="{{power.title}}">
+                <div class="product-icons">
+                        <a class="product-icon" (click)="accessItem(power.id)">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    <button class="product-cart-btn product-icon" (click)="addItem(power)">
+                    <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <footer>
+            <p class="product-name">{{power.manufacturer}} {{power.title}}</p>
+            <h4 class="product-price">RON {{power.price}}</h4>
+            </footer>
+        </article>
+        <!-- end of new product -->
+        
+    </div>
+</section>
